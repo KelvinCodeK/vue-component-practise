@@ -1,15 +1,23 @@
 <template>
-    <div></div>
+    <user-data @submit-data="userData"></user-data>
+    <active-user 
+    :user-name="userName" 
+    :user-age="userAge">
+    </active-user>
 </template>
 
 <script>
-
-
 export default ({
-    name: 'App',
     data() {
         return {
-
+            userName: '',
+            userAge: null
+        }
+    },
+    methods: {
+        userData(name, age) {
+            this.userName = name;
+            this.userAge = age;
         }
     }
 })
